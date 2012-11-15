@@ -1,6 +1,6 @@
 %div{:data_theme => "a", :data => {:role => "header"}}
 	%h3 Crear Contacto
-	= link_to 'Regresar', contacts_path, "class" => "ui-btn-left", "data-rol" => "button", "data-icon" => "back"
+	= link_to 'Regresar', contacts_path, "class" => "ui-btn-left", "data-rol" => "button", "data-icon" => "back", "data-rel" => "back"
 
 %div{:data => {:role => "content"}}
 	= render 'form'

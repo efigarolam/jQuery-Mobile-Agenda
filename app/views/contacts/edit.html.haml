@@ -1,7 +1,7 @@
 %div{:data_theme => "a", :data => {:role => "header"}}
 	%h3 Editar Contacto
 	= link_to 'Regresar', contacts_path, "class" => "ui-btn-left", "data-rol" => "button", "data-icon" => "back"
-	= link_to 'Borrar', @contact, :method => :delete, "data-rol" => "button", "data-icon" => "delete", "class" => "ui-btn-right"
+	= link_to 'Borrar', @contact, :method => :delete, :confirm => "¿Estás seguro?", "data-rol" => "button", "data-icon" => "delete", "class" => "ui-btn-right"
 
 %div{:data => {:role => "content"}}
 	= render 'form'

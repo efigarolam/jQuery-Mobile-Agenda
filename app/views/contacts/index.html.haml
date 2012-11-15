@@ -1,0 +1,11 @@
+%div{:data_theme => "a", :data => {:role => "header"}}
+  %h3 Contactos
+  = link_to 'Añadir', new_contact_path, "data-role" => "button", "class" => "ui-btn-right", "data-rol" => "button", "data-icon" => "plus"
+
+%div{:data => {:role => "content"}}
+  %ul{:data => {:role => "listview", :divider_theme => "b", :inset => "true"}}
+    - @contacts.each do |contact|
+      %li
+        = link_to contact.name + " " + contact.last_name, contact
+        = link_to 'edit contact', edit_contact_path(contact), "data-theme" => "a", "data-icon" => "refresh"
+

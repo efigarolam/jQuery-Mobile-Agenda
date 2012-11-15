@@ -1,0 +1,14 @@
+%div{:data => {:role => "header"}}
+	%h3= @contact.name + " " + @contact.last_name
+	= link_to "Regresar", contacts_url, "class" => "ui-btn-left", "data-rol" => "button", "data-icon" => "back"
+
+%div{:data => {:role => "contenct"}}
+	%p.center
+		%span.field Nombre: 
+		= @contact.name
+	%p.center 
+		%span.field Apellidos:
+		= @contact.last_name
+	%p.center
+		%span.field Teléfono:
+		= @contact.phone

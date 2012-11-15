@@ -1,0 +1,27 @@
+= form_for(@contact) do |f|
+  - if @contact.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@contact.errors.count, "error")
+        Ocurrieron los siguientes errores:
+      %ul
+        - @contact.errors.full_messages.each do |msg|
+          = msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+
+  .field
+    = f.label :phone
+    = f.text_field :phone
+
+  .actions
+    - if @contact.id != nil
+      = f.submit "Editar Contacto"
+    - else 
+      = f.submit "Crear Contacto"
